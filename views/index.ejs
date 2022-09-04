@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h1>ADD PRODUCTS</h1>
+    <ol>
+        <% for(let i of product_list) { %>
+            <li class="products">
+                <div class="answer">
+                <p>
+                    <%= i.product %>
+                </p>
+                </div>
+            <div class="delete-button">
+                <a href="/delete-product/?id=<%=i._id %>">
+                    <i class="fa-solid fa-square-xmark"></i>
+                </a>
+            </div>
+            </li>
+
+
+            <%}%>
+    </ol>
+
+    <form action="/create-product" method="post">
+        <input type="text" name="product" id="productid" placeholder="Enter Your product" required>
+        <input type="submit" value="Add Product">
+    </form>
+    <script src="https://kit.fontawesome.com/3bc30c5c3b.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
